@@ -20,7 +20,6 @@ input.onButtonPressed(Button.AB, function () {
 input.onButtonPressed(Button.B, function () {
     while (case_test == 1) {
         pins.digitalWritePin(DigitalPin.P0, 1)
-        basic.showString("Walk")
         basic.showLeds(`
             . . # . .
             . # . . .
@@ -28,8 +27,10 @@ input.onButtonPressed(Button.B, function () {
             . # . . .
             . . # . .
             `)
-        basic.pause(20000)
-        basic.pause(5000)
+        basic.showString("Walk")
+        for (let index = 0; index <= 17; index++) {
+            basic.showNumber(17 - index)
+        }
         pins.digitalWritePin(DigitalPin.P0, 0)
         pins.digitalWritePin(DigitalPin.P1, 1)
         basic.pause(1000)
